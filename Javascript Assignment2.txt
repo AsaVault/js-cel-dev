@@ -1,0 +1,165 @@
+﻿Questions 1
+List the different ways to print a Javascript expression.
+
+
+My Answers begins here:
+
+1. Writing into an HTML element, using innerHTML.
+   eg. document.getElementByTagName("h1").innerHTML = "Hello World!";
+
+2. Writing into the HTML output using document.write().
+   eg. document.write("Hello World!");
+
+3. Writing into an alert box, using window.alert().
+   eg. window.alert("Hello World");
+
+4. Writing into the browser console, using console.log().
+   eg. console.log("Hello World!");
+
+Question 2
+What are Javascript Data types, explain what you understand from each Data Types?
+    
+   The latest ECMAScript standard defines eight data types:
+
+	Seven data types that are primitives:
+	1. Boolean. true and false.
+	2. null. A special keyword denoting a null value. (Because JavaScript is case-sensitive, null is not the same as Null, NULL, or any other variant.)
+	3. undefined. A top-level property whose value is not defined.
+	4. Number. An integer or floating point number. For example: 42 or 3.14159.
+	5. BigInt. An integer with arbitrary precision. For example: 9007199254740992n.
+	6. String. A sequence of characters that represent a text value. For example: "Howdy"
+	7. Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.
+	8. and Object
+ 	
+	Explanations on each Data Types.
+
+
+    Boolean:
+
+    	In computer science, a Boolean is a logical data type that can have only the values true or false. For example, in JavaScript, 	Boolean conditionals are often used to decide which sections of code to execute (such as in if statements) or repeat 	(such 	as in for loops).
+
+	Below is some JavaScript pseudocode (it's not truly executable code) demonstrating this concept.
+    	eg.
+
+    	if (true) {
+  	console.log("boolean conditional resolved to true");
+	} else {
+ 	console.log("boolean conditional resolved to false");
+	}
+
+    Null:
+
+    	In computer science, a null value represents a reference that points, generally intentionally, to a nonexistent or invalid 		object 	or address. The meaning of a null reference varies among language implementations.
+
+	In JavaScript, null is one of the primitive values.
+    	eg. let name = null; 
+    The code above states that name is null.
+
+    Undefined:
+
+    	undefined is a primitive value automatically assigned to variables that have just been declared, or to formal arguments for 		which there are no actual arguments.
+    	if a variable is declared, but no value is assigned, it is Undefined:
+
+    	eg. let name;
+        console.log(name) // shows "Undefined"
+    
+    	and we can also assign Undefined to a variable.
+    	eg. let name = "Samuel";
+        name = Undefined;
+        console.log(x); // shows "undefined".
+    
+    Number: 
+	In JavaScript, Number is a numeric data type in the double-precision 64-bit floating point format (IEEE 754). In other 	programming languages different numeric types can exist, for examples: Integers, Floats, Doubles, or Bignums.
+
+        eg. let num = 123 ; // integer
+            num = 12.345; // floating-point number
+    
+
+    
+
+    BigInt:
+
+	In JavaScript, BigInt is a numeric data type that can represent integers in the arbitrary precision format. In other 	programming languages different numeric types can exist, for examples: Integers, Floats, Doubles, or Bignums.
+
+BigInt is a built-in object that provides a way to represent whole numbers larger than 253 - 1, which is the largest number JavaScript can reliably represent with the Number primitive and represented by the Number.MAX_SAFE_INTEGER constant. BigInt can be used for arbitrarily large integers.
+
+A BigInt is created by appending n to the end of an integer literal — 10n — or by calling the function BigInt().
+
+BigInt is similar to Number in some ways, but also differs in a few key matters — it cannot be used with methods in the built-in Math object and cannot be mixed with instances of Number in operations; they must be coerced to the same type. Be careful coercing values back and forth, however, as the precision of a BigInt may be lost when it is coerced to a Number.
+
+const theBiggestInt = 9007199254740991n
+
+const alsoHuge = BigInt(9007199254740991)
+// ↪ 9007199254740991n
+
+const hugeString = BigInt("9007199254740991")
+// ↪ 9007199254740991n
+
+const hugeHex = BigInt("0x1fffffffffffff")
+// ↪ 9007199254740991n
+
+const hugeBin = BigInt("0b11111111111111111111111111111111111111111111111111111")
+// ↪ 9007199254740991n
+
+
+    String:
+  
+    The String global object is a constructor for strings or a sequence of characters.
+
+Strings can also be created using the String constructor:
+
+        eg. let fristName = "Samuel";
+            let lastName = 'Segun';
+            
+    
+    Symbols:
+
+    The data type symbol is a primitive data type. The Symbol() function returns a value of type symbol, has static properties that expose several members of built-in objects, has static methods that expose the global symbol registry, and resembles a built-in object class, but is incomplete as a constructor because it does not support the syntax "new Symbol()".  
+
+    Object:
+
+    The Object class represents one of JavaScript's data types. It is used to store various keyed collections and more complex entities. Objects can be created using the Object() constructor or the object initializer / literal syntax.
+
+        eg. of object literal
+            let user = {
+                firstName : 'Samuel',
+                lastName: 'segun',
+                email: 'asamoja9100@gmail.com'
+                job: 'Software Developer',
+                age: 100,
+		language: function(){
+			console.log("English")
+		}
+            };
+
+        
+
+        
+Question 3
+Which are Primitive Data Types in Javascript
+A primitive (primitive value, primitive data type) is data that is not an object and has no methods. There are 7 primitive data types: string, number, bigint, boolean, null, undefined, and symbol.
+
+
+All primitives are immutable, i.e., they cannot be altered. The variable may be reassigned a new value, but the existing value can not be changed in the ways that objects, arrays, and functions can be altered.
+
+eg.
+
+// Using a string method doesn't mutate the string
+var bar = "baz";
+console.log(bar);               // baz
+bar.toUpperCase();
+console.log(bar);               // baz
+
+// Using an array method mutates the array
+var foo = [];
+console.log(foo);               // []
+foo.push("plugh");
+console.log(foo);               // ["plugh"]
+
+// Assignment gives the primitive a new (not a mutated) value
+bar = bar.toUpperCase();       // BAZ
+
+Question 4
+Are everything in Javascript object? if Yes explain or if No explain why.
+ 
+In JavaScript, most things are objects, from core JavaScript features like strings and arrays to the browser APIs built on top of JavaScript because one can even create a predefined objects to encapsulate related functions and variables into efficient packages, and act as handy data containers due to The object-based nature of JavaScript
